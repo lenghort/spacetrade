@@ -8,13 +8,20 @@ class Shopcontroller extends Controller
 {
     public function listofshops()
     {
-        return view('list_of_shop'); 
+        $shops = [
+            'ponny',
+            'rice',
+            'soup',
+        ];
+
+        return view('list_of_shop', ['shops' => $shops]); 
     }
     
 
     public function showshopdetails($name_of_shop)
     {
-        return "This will be a page of the shop with name: $name_of_shop";
+    
+        return view('details_of_shop', ['name_of_shop'=> $name_of_shop]);
     }
 
 }
