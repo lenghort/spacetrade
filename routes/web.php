@@ -14,8 +14,8 @@ Route::get('/', \App\Http\Controllers\welcomecontroller::class)->name('home');
  */
 
 //Route::get('shops', [::class], 'listofshop')->name('shops');
-Route::get('shops', [\App\Http\Controllers\Shopcontroller::class, 'list'])->name('shops.list');
-Route::get('shops/{name_of_shop}', [\App\Http\Controllers\Shopcontroller::class, 'details'])->name('shops.detail');
+Route::get('shops', [\App\Http\Controllers\Shopcontroller::class, 'index'])->name('shops.index');
+Route::get('shops/{shop}', [\App\Http\Controllers\Shopcontroller::class, 'show'])->name('shops.show');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

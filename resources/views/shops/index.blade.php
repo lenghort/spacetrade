@@ -10,9 +10,6 @@
     </h1>
     <ul>
         
-        @foreach($shops as $shop)
-            <li> <a href="/shops/{{$shop}}">{{ $shop }}</a></li>
-        @endforeach
 
     </ul>
 </body>
