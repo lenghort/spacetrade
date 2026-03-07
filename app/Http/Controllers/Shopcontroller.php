@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class Shopcontroller extends Controller
 {
-    public function listofshops()
+    public function list()
     {
         $shops = [
             'ponny',
@@ -14,14 +14,14 @@ class Shopcontroller extends Controller
             'soup',
         ];
 
-        return view('list_of_shop', ['shops' => $shops]); 
+        return view('shops.list', ['shops' => $shops]); 
     }
     
 
-    public function showshopdetails($name_of_shop)
+    public function details($name_of_shop)
     {
     
-        return view('details_of_shop', ['name_of_shop'=> $name_of_shop]);
+        return view('shops.details', ['name_of_shop'=> $name_of_shop]);
     }
 
 }

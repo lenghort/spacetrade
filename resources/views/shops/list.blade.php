@@ -11,12 +11,9 @@
     <ul>
         
         @foreach($shops as $shop)
-            <li>{{ $shop }}</li>
+            <li> <a href="/shops/{{$shop}}">{{ $shop }}</a></li>
         @endforeach
 
-        <li>shop 1</li>
-        <li>shop 2</li>
-        <li>shop 3</li>
     </ul>
 </body>
 
