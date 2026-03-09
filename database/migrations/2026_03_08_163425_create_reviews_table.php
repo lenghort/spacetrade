@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->foreignId('shop_id');
+            $table->foreignId('author_id');
             $table->text('comment');
             $table->timestamps();
         });
