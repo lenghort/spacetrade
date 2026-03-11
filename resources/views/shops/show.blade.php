@@ -9,6 +9,17 @@
 <p>{{$shop->decription}}</p>
 
 <hr/>
+<h2>Foods Present</h2>
+<ul>
+    @foreach ($shop->foods as $food)
+        <li>
+            {{ $food->name }}
+        </li>
+        
+    @endforeach
+</ul>
+
+<hr/>
 <h2>Reviews</h2>
 <ul>
     @foreach($shop->reviews as $review)
