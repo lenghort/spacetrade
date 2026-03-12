@@ -1,4 +1,4 @@
-<x-site-layout>
+<x-site-layout title="List of shops">
 
     <h1 class="text-2xl font-bold">
         List Of Shops
