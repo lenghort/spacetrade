@@ -2,8 +2,9 @@
 
     <div class="max-7xl mx-auto flex justify-between item-center">
         <ul class="flex space-x-3 p-3">
-            <li><a href="{{ route('home') }}">Home</a></li>
-            <li><a href="{{ route('shops.index') }}">Shop</a></li>
+            @foreach($menu_items as $item)
+                <li><a href="{{$item['url']}}">{{$item['name']}}</a></li>
+            @endforeach
         </ul>
 
     
