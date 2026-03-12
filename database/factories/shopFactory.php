@@ -21,7 +21,7 @@ class ShopFactory extends Factory
             "address"=> $this->faker->address(),
             "item_type"=> $this->faker->randomElement(['table', 'tv', 'bottle']),
             "price_level"=> $this->faker->randomElement(['cheap', 'moderate', 'expensive', 'unknown']),
-            "decription"=> $this->faker->paragraph(),
+            "description"=> $this->faker->paragraph(),
             'author_id' => $this->faker->numberBetween(1, 10),
         ];
     }
