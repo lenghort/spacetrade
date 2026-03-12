@@ -6,12 +6,13 @@
 
         @csrf
 
+        <input type="hidden" name="author_id" value="{{auth()->id()}}"/>
         <x-text-input name="name" placeholder="Full name" label="Shop name"/>
         <x-text-input name="address" placeholder="Street, nr, zip, city" label="Shop Address"/>
 
         <x-select
-            name="food_type"
-            label="Food type"
+            name="item_type"
+            label="item_type"
             :options="['Cafe' => 'Cafe (or coffee shop)', 'Restaurant' => 'Restaurant (serving food)', 'Takeaway' => 'Takeaway (serving food to go)', 'Fast Food' => 'Fast food']"
         />
 
