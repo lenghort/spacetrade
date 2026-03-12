@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,7 +23,7 @@ class ShopFactory extends Factory
             "item_type"=> $this->faker->randomElement(['table', 'tv', 'bottle']),
             "price_level"=> $this->faker->randomElement(['cheap', 'moderate', 'expensive', 'unknown']),
             "description"=> $this->faker->paragraph(),
-            'author_id' => $this->faker->numberBetween(1, 10),
+            'author_id' => auth()->id(),
         ];
     }
 }
