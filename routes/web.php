@@ -27,6 +27,8 @@ Route::get('dashboard', \App\Http\Controllers\DashboardController::class)
 Route::get('home/food', [\App\Http\Controllers\Home\FoodController::class, 'index'])->name('home.food.index');
 Route::get('home/food/create', [\App\Http\Controllers\Home\FoodController::class, 'create']);
 Route::post('home/food', [\App\Http\Controllers\Home\FoodController::class, 'store']);
+Route::get('home/food/{id}/edit', [\App\Http\Controllers\Home\FoodController::class, 'edit'])->name('home.food.edit');
+Route::put('home/food/{id}', [\App\Http\Controllers\Home\FoodController::class, 'update'])->name('home.food.update');
 
 require __DIR__.'/settings.php'; 
 
