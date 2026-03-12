@@ -20,7 +20,7 @@ Route::get('shops/{shop}', [\App\Http\Controllers\Shopcontroller::class, 'show']
 Route::get('food', [\App\Http\Controllers\FoodController::class, 'index'])->name('food.index');
 Route::get('food/{food}', [\App\Http\Controllers\FoodController::class, 'show'])->name('food.show');
 
-Route::view('dashboard', 'dashboard')
+Route::get('dashboard', \App\Http\Controllers\DashboardController::class)
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
