@@ -23,7 +23,7 @@ class ShopFactory extends Factory
             "item_type"=> $this->faker->randomElement(['table', 'tv', 'bottle']),
             "price_level"=> $this->faker->randomElement(['cheap', 'moderate', 'expensive', 'unknown']),
             "description"=> $this->faker->paragraph(),
-            'author_id' => auth()->id(),
+            'author_id'   => User::exists() ? User::inRandomOrder()->first()->id : User::factory(),
         ];
     }
 }
