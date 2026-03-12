@@ -5,7 +5,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="bg-purple-200">
+
+    <x-site-navigation/>
+
+    <main class="p-5">
 
 <div class="bg-purple-900 text-white">
     <ul class="flex space-x-3 p-3">
@@ -13,11 +16,11 @@
         <li><a href="{{ route('shops.index') }}">Shop</a></li>
     </ul>
 </div>
+        {{ $slot }}
 
-<div class="p-5">
+    </main>
 
-    {{ $slot }}
+    <x-site-footer/>
 
-</div>
 </body>
 </html>
