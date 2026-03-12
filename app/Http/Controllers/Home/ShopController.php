@@ -13,7 +13,7 @@ class ShopController extends Controller
      */
     public function index()
     {
-        $shops = Shop::all();
+        $shops = Shop::where('author_id',auth()->id())->get();
 
         return view('home.shops.index', compact('shops'));
     }
@@ -49,7 +49,7 @@ class ShopController extends Controller
             'address' => $data['address'],
             'item_type' => $data['item_type'],
             'price_level' => $data['price_level'],
-            'author_id' => ['required', 'integer'],
+            'author_id' => $data['author_id'],
         ]);
 
         $shop->foods()->sync($data['foods'] ?? []);
@@ -69,6 +69,10 @@ class ShopController extends Controller
     {
         $shop = Shop::findOrFail($id);
 
+        if ($shop->author_id !== auth()->id()) {
+            abort(403, 'Unauthorized action.');
+        }
+
         return view('home.shops.edit', compact('shop'));
     }
 
@@ -79,6 +83,9 @@ class ShopController extends Controller
     {
         // 1. get the shop (if it exists)
         $shop = Shop::findOrFail($id);
+        if ($shop->author_id !== auth()->id()) {
+            abort(403, 'Unauthorized action.');
+        }
 
         // 2. validate the request
         $data = $request->validate([
@@ -111,6 +118,9 @@ class ShopController extends Controller
     {
         // 1. get the shop (if it exists)
         $shop = Shop::findOrFail($id);
+        if ($shop->author_id !== auth()->id()) {
+            abort(403, 'Unauthorized action.');
+        }
 
         // 2. delete the shop
         $shop->delete();
