@@ -1,6 +1,6 @@
 <x-site-layout>
 
-    <h1 class="font-bold text-2xl mb-4">Create a new shop</h1>
+    <h1 class="font-bold text-2xl mb-4">Create a new Category</h1>
 
     <form class="flex flex-col gap-4" action="/home/shops" method="post">
 

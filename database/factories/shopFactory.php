@@ -20,7 +20,7 @@ class ShopFactory extends Factory
         return [
             "name"=> $this->faker->company(),
             "address"=> $this->faker->address(),
-            "item_type"=> $this->faker->randomElement(['table', 'tv', 'bottle']),
+            "item_type"=> $this->faker->randomElement(['table', 'tv', 'bottle', 'electronic']),
             "price_level"=> $this->faker->randomElement(['cheap', 'moderate', 'expensive', 'unknown']),
             "description"=> $this->faker->paragraph(),
             'author_id'   => User::exists() ? User::inRandomOrder()->first()->id : User::factory(),

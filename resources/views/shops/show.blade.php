@@ -5,7 +5,7 @@
     <p>{{$shop->decription}}</p>
 
     <div class="mt-3 mb-3">
-        <h2 class="inline text-xl font-bold color-black bg-purple-500 mt-3 mb-3">Foods Present</h2>
+        <h2 class="inline text-xl font-bold color-black bg-purple-500 mt-3 mb-3">Iterm Present</h2>
         <ul class="list-disc list-inside">
             @foreach ($shop->foods as $food)
                 <li><a href="{{route('food.show', $food->id)}}">{{$food->name}}</a></li>

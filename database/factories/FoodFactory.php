@@ -17,7 +17,7 @@ class FoodFactory extends Factory
     public function definition(): array
     {
         return [
-            'name'=> $this->faker->randomElement(['Pizza', 'Burger', 'Sushi', 'Pasta', 'salad', 'Soup']),
+            'name'=> $this->faker->randomElement(['clothes', 'furniture', 'keyboard', 'monitor', 'kitchen']),
             //
         ];
     }

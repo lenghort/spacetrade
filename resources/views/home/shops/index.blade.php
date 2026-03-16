@@ -2,11 +2,11 @@
 
     <div class="max-w-7xl mx-auto flex items-center justify-between">
         <h1 class="font-bold text-2xl mb-4">
-            List of shops
+            List of category
         </h1>
 
         <div>
-            <a href="/home/shops/create" class="bg-sky-900 text-sky-50 p-1">Create Shop</a>
+            <a href="/home/shops/create" class="bg-sky-900 text-sky-50 p-1">Create Category</a>
         </div>
 
     </div>

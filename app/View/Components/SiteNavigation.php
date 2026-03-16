@@ -16,8 +16,8 @@ class SiteNavigation extends Component
     {   
         $this->menu_items = [
             ['name' => 'Home', 'url' => route('home')],
-            ['name' => 'Shops', 'url' => route('shops.index')],
-            ['name' => 'Food', 'url' => route('food.index')],
+            ['name' => 'Category', 'url' => route('shops.index')],
+            ['name' => 'Iterm', 'url' => route('food.index')],
         ];
         //
     }

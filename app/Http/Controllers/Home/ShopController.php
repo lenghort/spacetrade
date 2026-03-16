@@ -13,8 +13,11 @@ class ShopController extends Controller
      */
     public function index()
     {
-        $shops = Shop::where('author_id',auth()->id())->get();
-
+        if (auth()->user()->is_admin) {
+            $shops = Shop::all();
+        } else {
+            $shops = Shop::where('author_id', auth()->id())->get();
+        }
         return view('home.shops.index', compact('shops'));
     }
 
@@ -69,7 +72,7 @@ class ShopController extends Controller
     {
         $shop = Shop::findOrFail($id);
 
-        if ($shop->author_id !== auth()->id()) {
+        if (!$shop->canManage(auth()->user())) {
             abort(403, 'Unauthorized action.');
         }
 
@@ -83,7 +86,7 @@ class ShopController extends Controller
     {
         // 1. get the shop (if it exists)
         $shop = Shop::findOrFail($id);
-        if ($shop->author_id !== auth()->id()) {
+        if (!$shop->canManage(auth()->id())) {
             abort(403, 'Unauthorized action.');
         }
 
@@ -118,7 +121,7 @@ class ShopController extends Controller
     {
         // 1. get the shop (if it exists)
         $shop = Shop::findOrFail($id);
-        if ($shop->author_id !== auth()->id()) {
+        if (!$shop->canManage(auth()->user())) {
             abort(403, 'Unauthorized action.');
         }
 
